@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<button onclick="getDefinition()">Search</button>
+<p id="myDiv"></p>
+
+<script type="text/javascript">
+function getDefinition() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+           if (xmlhttp.status == 200) {
+               alert(xmlhttp.responseText);
+           }
+         
+           else {
+               alert('Oops!');
+           }
+        }
+    };
+
+    xmlhttp.open("GET", "request.php?q=definition", true);
+    xmlhttp.send();
+}
+</script>
+
+</body>
+</html>
