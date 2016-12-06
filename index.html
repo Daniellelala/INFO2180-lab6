@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html>
-<body>
+	<head>
+		<title> Definition </title>
+		<script type="text/javascript" src="jquery-3.1.1.min.js" ></script>
+		<script type="text/javascript" src="script.js" ></script>
+	</head>
 
+	<body>
 
-<button onclick="getDefinition()">Search</button>
-<p id="myDiv"></p>
+		<input type="text" id="query"/>
+		<input type="submit" value="Search" id="search"/>
+		<input type="submit" value="Get All Definitions" id="alldefs"/>
 
-<script type="text/javascript">
-function getDefinition() {
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-           if (xmlhttp.status == 200) {
-               alert(xmlhttp.responseText);
-           }
-         
-           else {
-               alert('Oops!');
-           }
-        }
-    };
-
-    xmlhttp.open("GET", "request.php?q=definition", true);
-    xmlhttp.send();
-}
-</script>
-
-</body>
+		<div id="result"></div>
+	</body>
 </html>
